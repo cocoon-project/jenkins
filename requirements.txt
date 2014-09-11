@@ -1,0 +1,13 @@
+PyYAML
+docopt
+requests
+flask
+mongoengine
+pymongo
+python-jenkins
+robotframework
+robotframework-mongodblibrary
+robotframework-requests
+robotframework-selenium2library
+selenium
+uiautomator
