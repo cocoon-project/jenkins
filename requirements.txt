@@ -1,13 +1,17 @@
+# box office
 PyYAML
 docopt
 requests
 flask
-mongoengine
-pymongo
+# jenkins
+tox
 python-jenkins
+# robot framework
 robotframework
 robotframework-mongodblibrary
 robotframework-requests
 robotframework-selenium2library
+robotframework-sudslibrary
 selenium
+pymongo
 uiautomator

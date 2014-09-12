@@ -10,6 +10,9 @@ ENV JENKINS_HOME /jenkins
 ADD requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 
+# install robotframework uiautomator 
+#pip install -i https://pypi.binstar.org/pypi/simple robotframework-uiautomatorlibrary
+
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
