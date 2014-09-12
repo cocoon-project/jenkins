@@ -29,4 +29,8 @@ start the container
 
 ```
 sudo docker run -p 8080:8080 -v /home/cocoon/shared/jenkins:/jenkins -v /home/cocoon/shared/robot:/robot    cocoon/jenkins
-``
+```
+
+/jenkins : the state for the jenkins container
+
+/robot : the robotframwork test sources
