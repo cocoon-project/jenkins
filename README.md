@@ -4,6 +4,14 @@ jenkins
 jenkins docker image based on cocoon/python
 
 
+composition
+========
+debian:wheezy
+	cocoon/python
+		cocoon/jenkins
+
+
+
 on the docker host:
 
 ```
