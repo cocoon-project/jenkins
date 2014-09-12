@@ -13,7 +13,7 @@ RUN pip install -r /tmp/requirements.txt
 
 
 # install robotframework uiautomator 
-pip install -i https://pypi.binstar.org/pypi/simple robotframework-uiautomatorlibrary
+RUN pip install -i https://pypi.binstar.org/pypi/simple robotframework-uiautomatorlibrary
 
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
