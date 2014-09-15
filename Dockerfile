@@ -16,6 +16,14 @@ RUN pip install -r /tmp/requirements.txt
 RUN pip install -i https://pypi.binstar.org/pypi/simple robotframework-uiautomatorlibrary
 
 
+# install pyjenkins
+RUN pip install PyYAML
+RUN pip install git+https://bitbucket.org/cocoon_bitbucket/pyjenkins.git
+
+
+VOLUME ['/jenkins' , '/tests']
+
+
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
 CMD [""]
