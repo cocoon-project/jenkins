@@ -22,8 +22,8 @@ RUN pip install PyYAML
 RUN pip install git+https://bitbucket.org/cocoon_bitbucket/pyjenkins.git
 
 # volumes: /jenkins for the state , /tests for the test sources 
-VOLUME /tests
-VOLUME /jenkins
+#VOLUME /tests
+#VOLUME /jenkins
 
 
 
