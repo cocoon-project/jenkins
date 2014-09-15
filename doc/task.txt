@@ -1,0 +1,30 @@
+# task
+
+ProjetDir = "${basedir}/OVC"
+ArgumentFile = "${basedir}/tmp/arguments/argfile.txt"
+OutPutDirectory = "${basedir}/tmp/log/"
+SaveLogDirectory = "${basedir}/tmp/logs/"
+pybot = "/usr/local/bin/pybot"
+outputXML = "${basedir}/tmp/log/output.xml"
+POSToutputXML = "${basedir}/tmp/log/POSToutput.xml"
+
+
+#1 cleanup build artifacts
+tstamp property="time.start" pattern="yyyy-MM-dd HH:mm z"
+
+zip destfile="${SaveLogDirectory}/log${time.start}.zip" basedir="${OutPutDirectory}
+
+delete dir="${OutPutDirectory}"
+
+#2 prepare
+mkdir dir="${OutPutDirectory}
+
+
+#3 lancement pybot
+echo message="Time:${time.start} - Starting tests..."
+
+exec ${pybot} --argumentfile $ArgumentFile --outputdir $OutPutDirectory $ProjetDir
+
+tstamp format property="time.end" pattern="yyyy-MM-dd HH:mm z"
+
+echo message="Time : ${time.end} - Ending tests."

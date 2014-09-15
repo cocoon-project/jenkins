@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="OVC" default="test">
+
+	<property environment="env" />
+	<property name="ProjetDir" value="${basedir}/OVC"/>
+	<property name="ArgumentFile" value="${basedir}/tmp/arguments/argfile.txt"/>
+	<property name="OutPutDirectory" value="${basedir}/tmp/log/"/>
+	<property name="SaveLogDirectory" value="${basedir}/tmp/logs/"/>
+	<property name="pybot" value="/usr/local/bin/pybot"/>
+	<property name="outputXML" value="${basedir}/tmp/log/output.xml"/>
+	<property name="POSToutputXML" value="${basedir}/tmp/log/POSToutput.xml"/>
+	
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask">
+     		<classpath>
+	       		<pathelement location="/opt/ant/lib/xmltask.jar"/>
+			<pathelement location="/opt/ant/lib/xalan.jar"/>
+		</classpath>
+	</taskdef>
+	
+	<target name="clean" description="Cleanup build artifacts">
+		<tstamp>
+			<format property="time.start" pattern="yyyy-MM-dd HH:mm z"/>
+		</tstamp>
+		<zip destfile="${SaveLogDirectory}/log${time.start}.zip"
+			basedir="${OutPutDirectory}"
+		/>
+		<delete dir="${OutPutDirectory}"/>
+	</target>
+
+	<target name="prepare" depends="clean" description="Prepare for build">
+		<mkdir dir="${OutPutDirectory}"/>
+	</target>	
+	
+	<target name="test" depends="prepare" description="Execute test">
+		<echo message="Time:${time.start} - Starting tests..."/>
+		<exec executable="${pybot}">
+			<arg value="--argumentfile"/>
+			<arg value="${ArgumentFile}"/>
+			<arg value="--outputdir"/>
+			<arg value="${OutPutDirectory}"/>
+			<arg value="${ProjetDir}"/>
+		</exec>
+		<tstamp>
+			<format property="time.end" pattern="yyyy-MM-dd HH:mm z" /> 
+		</tstamp>
+		<echo message="Time : ${time.end} - Ending tests." /> 
+	</target>
+ </project>
+		
+
