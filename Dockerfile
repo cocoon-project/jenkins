@@ -21,8 +21,10 @@ RUN pip install -i https://pypi.binstar.org/pypi/simple robotframework-uiautomat
 RUN pip install PyYAML
 RUN pip install git+https://bitbucket.org/cocoon_bitbucket/pyjenkins.git
 
+# volumes: /jenkins for the state , /tests for the test sources 
+VOLUME /tests
+VOLUME /jenkins
 
-VOLUME ['/jenkins' , '/tests']
 
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
