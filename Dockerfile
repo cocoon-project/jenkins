@@ -38,8 +38,9 @@ ADD tests /tests/
 # expose http port
 EXPOSE 8080
 
-# expose ssh port:   Started SSHD at port 48280
-EXPOSE 48280
+# expose ssh port:   Started SSHD at port 8081
+# ssh -p 8081 localhost who-am-i
+EXPOSE 8081
 
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]

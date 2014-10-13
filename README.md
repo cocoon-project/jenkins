@@ -17,9 +17,13 @@ check the jenkins httpports
 
 ```
 docker ps
+
+
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS              PORTS                     NAMES
+9f7923d2f679        cocoon/jenkins:latest     java -jar /opt/jenki   7 seconds ago       Up 5 seconds        0.0.0.0:49154->8080/tcp   drunk_hopper
 ```
 
-open a browser at ${docker_host}:49153
+open a browser at ${docker_host}:49154
 
 
 
