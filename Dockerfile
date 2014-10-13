@@ -29,10 +29,18 @@ ENV JENKINS_HOME /jenkins
 #VOLUME /opt/python
 
 # default values for volumes
-ADD jenkins /jenkins
-ADD tests /tests
+ADD jenkins /jenkins/
+ADD tests /tests/
+
+
+
+
+# expose http port
+EXPOSE 8080
+
+# expose ssh port:   Started SSHD at port 48280
+EXPOSE 48280
 
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
-EXPOSE 8080
 CMD [""]

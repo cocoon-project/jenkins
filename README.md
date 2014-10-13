@@ -1,7 +1,41 @@
 jenkins
 =======
 
-jenkins docker image based on cocoon/python
+jenkins docker image based on cocoon/pyrun
+
+
+play with the image in a sandbox
+
+
+```
+docker run -d -P cocoon/jenkins
+
+```
+
+check the jenkins httpports
+
+
+```
+docker ps
+```
+
+open a browser at ${docker_host}:49153
+
+
+
+
+customizing jenkins
+volumes:
+
+/jenkins : the place where jenkins store its state
+/tests   : the place to store te test you want to run
+/opt/python : the python environment ( pyrun )
+
+
+
+
+
+
 
 
 composition
