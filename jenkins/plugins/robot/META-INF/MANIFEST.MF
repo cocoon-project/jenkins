@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: jmalinen
+Build-Jdk: 1.7.0_45
+Extension-Name: robot
+Specification-Title: Shows Robot Framework test results in project
+Implementation-Title: robot
+Implementation-Version: 1.4.3
+Group-Id: org.jenkins-ci.plugins
+Short-Name: robot
+Long-Name: Robot Framework plugin
+Url: http://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin
+Plugin-Version: 1.4.3
+Hudson-Version: 1.424
+Jenkins-Version: 1.424
+Plugin-Dependencies: token-macro:1.5.1;resolution:=optional
+Plugin-Developers: Janne Piironen:jpiironen:janne.piironen@gmail.com
+
