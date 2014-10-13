@@ -28,6 +28,9 @@ ENV JENKINS_HOME /jenkins
 #VOLUME /jenkins
 #VOLUME /opt/python
 
+# default values for volumes
+ADD jenkins /jenkins
+ADD tests /tests
 
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
