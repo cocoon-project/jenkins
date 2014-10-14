@@ -29,8 +29,8 @@ ENV JENKINS_HOME /jenkins
 #VOLUME /opt/python
 
 # default values for volumes
-ADD jenkins /jenkins/
-ADD tests /tests/
+ADD sandbox/jenkins /jenkins/
+ADD sandbox/tests /tests/
 
 
 
