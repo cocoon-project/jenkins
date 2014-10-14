@@ -2,7 +2,7 @@ FROM cocoon/jenkins
 MAINTAINER cocoon
 
 # install more lib for uiautomator
-ADD requirements.txt /tmp
+ADD requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 
 
