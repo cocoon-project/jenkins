@@ -5,6 +5,9 @@ data:
     - tests
 web:
   build: ./app
+  privileged: true
+  volumes:
+    - /dev/bus/usb:/dev/bus/usb
   volumes_from:
     - data
   ports:
