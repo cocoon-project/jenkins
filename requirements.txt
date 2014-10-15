@@ -2,7 +2,6 @@
 PyYAML
 docopt
 requests
-flask
 # jenkins
 tox
 python-jenkins
@@ -10,6 +9,4 @@ python-jenkins
 robotframework
 robotframework-requests
 robotframework-selenium2library
-robotframework-sudslibrary
 selenium
-#uiautomator
