@@ -1,43 +1,24 @@
 jenkins
 =======
 
-jenkins docker image based on cocoon/pyrun
+jenkins docker image based on cocoon/base
+
+* + robotframwork
+* + pyjenkins
+* + droydrunner client
+
 
 
 play with the image in a sandbox
 
 
 ```
-docker run -d -P cocoon/jenkins
+docker run -d -8020:8080 cocoon/jenkins
 
 ```
 
-check the jenkins httpports
 
-
-```
-docker ps
-
-
-CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS              PORTS                     NAMES
-9f7923d2f679        cocoon/jenkins:latest     java -jar /opt/jenki   7 seconds ago       Up 5 seconds        0.0.0.0:49154->8080/tcp   drunk_hopper
-```
-
-open a browser at ${docker_host}:49154
-
-
-
-
-customizing jenkins
-
-clone custom_jenkins project : https://cocoon_bitbucket@bitbucket.org/cocoon_bitbucket/custom_jenkins.git 
-
-volumes:
-
-/jenkins : the place where jenkins store its state
-/tests   : the place to store the tests you want to run
-/opt/python : the python environment ( pyrun )
-
+open a browser at ${docker_host}:8020
 
 
 
@@ -45,7 +26,7 @@ volumes:
 composition
 ========
 debian:wheezy
-	cocoon/python
+	cocoon/base
 		cocoon/jenkins
 
 

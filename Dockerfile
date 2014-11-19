@@ -1,4 +1,4 @@
-FROM cocoon/pyrun
+FROM cocoon/base
 MAINTAINER cocoon
 
 RUN apt-get update && apt-get clean
@@ -10,23 +10,20 @@ ENV JENKINS_HOME /jenkins
 
 
 
-#ADD requirements.txt /tmp/
-#RUN pip install -r /tmp/requirements.txt
+ADD requirements.txt /tmp/
+RUN pip install -r /tmp/requirements.txt
 
-# install robotframework uiautomator 
-#RUN pip install -i https://pypi.binstar.org/pypi/simple robotframework-uiautomatorlibrary
 
-# install droydrunner
-#RUN pip install git+https://github.com/cocoon-project/droydrunner.git
+# install droydrunner client
+RUN pip install git+https://github.com/cocoon-project/droydrunner.git
 
 # install pyjenkins
-#RUN pip install PyYAML
-#RUN pip install git+https://bitbucket.org/cocoon_bitbucket/pyjenkins.git
+RUN pip install git+https://bitbucket.org/cocoon_bitbucket/pyjenkins.git
 
-# volumes: /jenkins for the state , /tests for the test sources /opt/python for pyrun
+# volumes: /jenkins for the state , /tests for the test sources
 #VOLUME /tests
 #VOLUME /jenkins
-#VOLUME /opt/python
+
 
 # default values for volumes
 ADD sandbox/jenkins /jenkins/
@@ -40,7 +37,7 @@ EXPOSE 8080
 
 # expose ssh port:   Started SSHD at port 8081
 # ssh -p 8081 localhost who-am-i
-EXPOSE 8081
+#EXPOSE 8081
 
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
