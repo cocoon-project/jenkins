@@ -40,5 +40,5 @@ EXPOSE 8080
 #EXPOSE 8081
 
 
-ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
-CMD [""]
+CMD ["java", "-jar", "/opt/jenkins.war"]
+
